@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  mqserver-k:
+    image: ibmcom/mq:9.1.5.0-r2
+    ports:
+      - "1414:1414"
+      - "9443:9443"
+    environment:
+      - LICENSE=accept
+      - MQ_QMGR_NAME=QM1
+    stdin_open: true
+    tty: true
+    restart: always
